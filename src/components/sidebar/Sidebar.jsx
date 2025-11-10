@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
-import './index.css';
+
+import style from "./Sidebar.module.css"
 
 import { AiFillHome } from "react-icons/ai";
 import { SiYoutubeshorts } from "react-icons/si";
@@ -10,7 +11,7 @@ function Sidebar() {
   return (
     <aside  className="aside-bar">
       <ul>
-        <li>
+        <li className={style.navlinks}>
           <NavLink
             to="/Home"
             className={({ isActive }) =>
