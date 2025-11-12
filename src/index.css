@@ -1,3 +1,6 @@
-.aside-bar {
-    display: flex;
+@import "tailwindcss";
+
+
+body{
+    @apply bg-neutral-950 text-neutral-100
 }
