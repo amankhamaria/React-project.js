@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { SiOpensearch } from "react-icons/si";
 import { MdClose } from "react-icons/md";
 
 function Navbar(props) {
@@ -23,6 +24,9 @@ function Navbar(props) {
             className="h-8"
           />
           <h1 className="font-semibold text-2xl">YouTube</h1>
+
+          <input type="text" placeholder="Search Bar" className="bg-white text-black rounded pl-5 ml-40" />
+        
         </div>
       </div>
     </header>
