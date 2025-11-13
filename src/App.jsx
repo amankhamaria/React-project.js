@@ -4,7 +4,9 @@ import { Route, Routes } from "react-router";
 import HomePage from "./pages/Home";
 import ErrorPage from "./ErrorPage";
 import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Sidebar from "./components/Sidebar";
+import VideoDetails from "./pages/VideoDetails";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -34,16 +36,24 @@ function App() {
       <Navbar onMenuBtnClick={toggleSidebar} isSidebarOpen={isSidebarOpen} />
       <main className="flex mt-16">
         <div
-          className={`transition-all fixed top-16 left-0 bottom-0 duration-1000 ${
-            isSidebarOpen ? "w-[200px] overflow-auto" : "w-0 overflow-hidden"
+          className={`transition-all duration-1000 fixed top-16 bottom-0 left-0 ${
+            isSidebarOpen
+              ? "min-w-[220px] w-[220px] overflow-auto"
+              : "w-0 overflow-hidden"
           }`}
         >
           <Sidebar />
         </div>
 
-        <section className={`min-h-screen w-full transition-all duration-1000 ${isSidebarOpen ? "ml-[200px]" :"ml-0"}`}>
+        <section
+          className={`transition-all duration-1000 min-h-screen w-full  ${
+            isSidebarOpen ? "ml-[220px]" : "ml-0"
+          }`}
+        >
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/videos/:vid" element={<VideoDetails />} />
+            <Route path="/results" element={<SearchResults />} />
 
             <Route path="*" element={<ErrorPage />} />
           </Routes>
